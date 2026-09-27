@@ -1,0 +1,54 @@
+================================================================================
+                               RISK DISCLAIMER
+                                ANTU LSS PRO
+================================================================================
+
+IMPORTANT NOTICE: PLEASE READ THIS RISK DISCLAIMER CAREFULLY BEFORE USING 
+THE ANTU LSS PRO TRADINGVIEW INDICATOR OR ANY ASSOCIATED DOCUMENTATION.
+
+1. EDUCATIONAL AND TECHNICAL ANALYSIS PURPOSES ONLY
+ANTU LSS PRO is a mathematical and algorithmic technical-analysis indicator 
+designed exclusively for use on the TradingView platform. It is developed solely 
+for educational, informational, and charting analysis purposes. Nothing contained 
+within the Pine Script code, documentation, guides, alerts, or accompanying 
+materials constitutes financial, investment, legal, tax, or trading advice.
+
+2. NO GUARANTEE OF PROFIT OR ACCURACY
+Trading financial markets—including but not limited to equities, futures, options, 
+currencies (Forex), commodities, and crypto-assets—involves substantial risk of 
+financial loss. ANTU LSS PRO DOES NOT GUARANTEE PROFITS, POSITIVE RETURNS, SPECIFIC 
+WIN RATES, OR IMMUNITY FROM CAPITAL LOSS. 
+
+No technical indicator, algorithm, script, or trading methodology can predict future 
+market movements with certainty. Past performance, backtested results, or historical 
+signals displayed on a chart do not guarantee or reliably predict future performance.
+
+3. INDEPENDENT USER RESPONSIBILITY
+Every user is solely and entirely responsible for their own trading and investment 
+decisions. You must independently evaluate the risks, determine your own capital 
+allocation, set appropriate stop-losses, and consult with a licensed financial advisor 
+or registered investment professional before executing any transactions with real 
+capital. 
+
+The author, developers, and sellers of ANTU LSS PRO expressly disclaim any and all 
+liability for any direct, indirect, incidental, punitive, or consequential financial 
+losses, damages, or missed opportunities arising directly or indirectly from the use 
+or reliance upon this indicator or its signals.
+
+4. MARKET RISK AND EXECUTION RISK
+Financial markets can experience rapid volatility, liquidity dry-ups, slippage, 
+price gaps, and technical disruptions. Automated, semi-automated, or manual trades 
+placed following indicator alerts are subject to order fill delays, platform latency, 
+broker outages, and unexpected market conditions. 
+
+5. ON-CHART STATS TABLE LIMITATION
+The on-chart statistics table displayed within the ANTU LSS PRO indicator calculates 
+a rolling historical metric based strictly on the user-selected sample size (default: 
+last 20 signals) and theoretical candle high/low target touches. It does NOT account 
+for real-world trading frictions such as broker commissions, exchange transaction fees, 
+taxes (STT, GST, etc.), slippage, or bid-ask spread. It is purely a visual analytical 
+aid, not an audited performance audit.
+
+BY PURCHASING, DOWNLOADING, COPYING, OR APPLYING ANTU LSS PRO TO YOUR TRADINGVIEW 
+CHARTS, YOU ACKNOWLEDGE THAT YOU HAVE READ, UNDERSTOOD, AND VOLUNTARILY ACCEPTED 
+ALL TERMS OF THIS RISK DISCLAIMER.

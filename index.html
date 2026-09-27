@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANTU LSS PRO — Liquidity Sweep + FVG Trading System for TradingView</title>
+  <meta name="description" content="Master institutional price action with ANTU LSS PRO for TradingView. Automated Sell-Side (SSL) & Buy-Side (BSL) Liquidity Sweeps, 3-Bar Fair Value Gaps, 50% midpoint entries, ATR-buffered stops, and real-time alerts.">
+  <meta name="keywords" content="ANTU LSS PRO, TradingView indicator, Liquidity Sweep, Fair Value Gap, FVG, Pine Script v6, Smart Money Concepts, SSL, BSL, day trading, Nifty, Bank Nifty">
+  <meta property="og:title" content="ANTU LSS PRO — Liquidity Sweep + FVG Trading System">
+  <meta property="og:description" content="A systematic TradingView Pine Script v6 indicator built around institutional liquidity sweeps and 3-bar Fair Value Gaps. Open source code + 4 complete guides.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/product_hero.jpg">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="page-top">
+
+  <!-- Top Announcement Bar -->
+  <div id="announcement-bar" class="announcement-bar">
+    <div class="container announcement-content">
+      <span class="pulse-tag">🔥 OFFICIAL LAUNCH OFFER</span>
+      <span class="announcement-text">Get 50% OFF ANTU LSS PRO — Launch Price <strong>₹999</strong> <del>₹1,999</del> | Lifetime Source Code Access</span>
+      <a href="#pricing" class="announcement-btn" id="announcement-cta">Claim Access &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Sticky Header / Navigation -->
+  <header id="main-header" class="site-header">
+    <div class="container header-container">
+      <a href="#page-top" class="brand-logo" id="brand-logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">ANTU LSS <span class="badge-pro">PRO</span></span>
+          <span class="logo-subtitle">Liquidity + FVG System</span>
+        </div>
+      </a>
+
+      <nav id="site-nav" class="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+          <li><a href="#simulator" class="nav-link">Live Simulator</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#package" class="nav-link">What's Inside</a></li>
+          <li><a href="#pricing" class="nav-link" style="color: #34d399; font-weight: 600;">Pricing (₹999)</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#pricing" class="btn-primary btn-sm header-cta" id="header-buy-btn">
+          <span>Get ANTU LSS PRO</span>
+          <span class="btn-price-tag">₹999</span>
+        </a>
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="hero-glow"></div>
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <div class="trust-badge-row">
+            <span class="chip chip-tech">TradingView Pine Script v6</span>
+            <span class="chip chip-zero">Zero Broker Dependency</span>
+            <span class="chip chip-audit">100% Non-Repainting</span>
+          </div>
+
+          <h1 class="hero-title">
+            Trade Where Institutional <span class="gradient-text">Liquidity Rests</span>. Not Where Retail Gets Trapped.
+          </h1>
+
+          <p class="hero-subtitle">
+            A systematic TradingView indicator combining <strong>Liquidity Sweeps (SSL & BSL)</strong> and <strong>3-Bar Fair Value Gaps (FVG)</strong> with automated 50% midpoint entries, ATR-buffered stops, and real-time native alerts.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#pricing" class="btn-primary btn-lg" id="hero-primary-cta">
+              <span class="btn-icon">⚡</span>
+              <span>GET ANTU LSS PRO — ₹999</span>
+              <span class="btn-subtext">Instant Digital Download • Open Source Code</span>
+            </a>
+            <a href="#simulator" class="btn-secondary btn-lg" id="hero-demo-cta">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              <span>Test Interactive Simulator</span>
+            </a>
+          </div>
+
+          <div class="hero-guarantees">
+            <div class="guarantee-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Full Pine Script v6 Source Code</span>
+            </div>
+            <div class="guarantee-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>4 Professional PDF Guides Included</span>
+            </div>
+            <div class="guarantee-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Free & Paid TradingView Plans</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="mockup-frame">
+            <div class="mockup-header">
+              <div class="traffic-lights">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              </div>
+              <div class="mockup-title">TradingView &bull; NIFTY 5m &bull; ANTU LSS PRO</div>
+              <div class="mockup-status"><span class="live-dot"></span> LIVE CALCULATION</div>
+            </div>
+            <div class="mockup-body">
+              <img src="assets/product_hero.jpg" alt="ANTU LSS PRO TradingView Indicator System Showcase" class="hero-img" id="hero-showcase-img">
+              <div class="mockup-overlay-badge badge-top-left">
+                <span class="badge-label">SSL SWEEP CONFIRMED</span>
+                <span class="badge-val">Midpoint Retest Entry @ 50%</span>
+              </div>
+              <div class="mockup-overlay-badge badge-bottom-right">
+                <span class="badge-label">RISK TO REWARD</span>
+                <span class="badge-val text-green">Fixed 2.0R Target Box Plotted</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LIVE INTERACTIVE SIMULATOR (THE WOW COMPONENT) -->
+    <section id="simulator" class="simulator-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">INTERACTIVE SANDBOX</span>
+          <h2 class="section-title">See How ANTU LSS PRO Executes in Real Time</h2>
+          <p class="section-subtitle">
+            Experience the automated 4-step sequence: Structural Pivot Detection &rarr; Wick Sweep Verification &rarr; Fair Value Gap Detection &rarr; 50% Midpoint Retest Entry with ATR Stop Loss and 2.0R Target.
+          </p>
+        </div>
+
+        <div class="simulator-card" id="simulator-container">
+          
+          <!-- Simulator Control Toolbar -->
+          <div class="sim-toolbar">
+            <div class="sim-asset-info">
+              <span class="sim-ticker">NSE: NIFTY</span>
+              <span class="sim-interval">5m</span>
+              <span class="sim-indicator-tag">ANTU LSS PRO v6</span>
+            </div>
+
+            <div class="sim-actions">
+              <button class="sim-btn active" id="sim-btn-long">
+                <span class="btn-dot green"></span> Run Bullish Setup (SSL Sweep)
+              </button>
+              <button class="sim-btn" id="sim-btn-short">
+                <span class="btn-dot red"></span> Run Bearish Setup (BSL Sweep)
+              </button>
+              <button class="sim-btn-ghost" id="sim-btn-reset" title="Reset Chart Simulation">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg>
+                Reset
+              </button>
+            </div>
+          </div>
+
+          <!-- Chart Simulator Canvas & Overlays -->
+          <div class="sim-canvas-wrapper" id="sim-canvas-wrapper">
+            <canvas id="tradingview-canvas" width="960" height="420"></canvas>
+
+            <!-- On-Chart Statistics HUD Box (Replicating the Pine Script table) -->
+            <div class="sim-stats-hud" id="sim-stats-hud">
+              <div class="hud-header">
+                <span class="hud-title">ANTU LSS PRO</span>
+                <span class="hud-sub">Signals</span>
+              </div>
+              <div class="hud-row">
+                <span class="hud-lbl">Bias</span>
+                <span class="hud-val text-green" id="hud-bias">Bullish ▲</span>
+              </div>
+              <div class="hud-row">
+                <span class="hud-lbl">Win Rate</span>
+                <span class="hud-val text-green" id="hud-wr">75.0%</span>
+              </div>
+              <div class="hud-row">
+                <span class="hud-lbl">Wins / Losses</span>
+                <span class="hud-val" id="hud-wl"><strong class="text-green">15</strong> / <strong class="text-red">5</strong></span>
+              </div>
+              <div class="hud-row">
+                <span class="hud-lbl">Sample</span>
+                <span class="hud-val" id="hud-sample">20 / 20</span>
+              </div>
+            </div>
+
+            <!-- Simulated TradingView Alert Notification Toast -->
+            <div class="sim-alert-toast" id="sim-alert-toast">
+              <div class="alert-toast-header">
+                <div class="alert-icon-wrap">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span>TradingView Alert &bull; Bar Close</span>
+                </div>
+                <span class="alert-time">Just Now</span>
+              </div>
+              <div class="alert-toast-body" id="sim-alert-body">
+                <code>{"action":"BUY","signal":"LONG","indicator":"ANTU LSS PRO","ticker":"NIFTY","entry":24520.00,"sl":24475.50,"tp":24609.00}</code>
+              </div>
+            </div>
+
+            <!-- Timeline Status Bar -->
+            <div class="sim-timeline-bar" id="sim-timeline-bar">
+              <div class="step-chip step-1 active" id="chip-step-1">1. Pivot Detected</div>
+              <div class="step-connector"></div>
+              <div class="step-chip step-2" id="chip-step-2">2. Liquidity Swept</div>
+              <div class="step-connector"></div>
+              <div class="step-chip step-3" id="chip-step-3">3. FVG Imbalance</div>
+              <div class="step-connector"></div>
+              <div class="step-chip step-4" id="chip-step-4">4. 50% Retest & 2R Boxes</div>
+            </div>
+          </div>
+
+          <!-- Explanation Bar beneath canvas -->
+          <div class="sim-explanation" id="sim-explanation-text">
+            <strong>Current State:</strong> Ready. Click <em>"Run Bullish Setup"</em> or <em>"Run Bearish Setup"</em> above to watch the institutional sequence unfold on confirmed candles.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE PROBLEM VS SOLUTION -->
+    <section class="comparison-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">MARKET REALITY</span>
+          <h2 class="section-title">Why Retail Breakout Trading Fails Consistently</h2>
+          <p class="section-subtitle">
+            Most indicators lag 14 bars in the past. ANTU LSS PRO trades where pending order liquidity resides in the present.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          
+          <!-- The Retail Way -->
+          <div class="comparison-card card-retail">
+            <div class="card-badge badge-retail">The Retail Trap</div>
+            <h3 class="card-title">Lagging Indicators & Breakout Traps</h3>
+            <ul class="comparison-list">
+              <li>
+                <div class="list-icon icon-cross">&#10005;</div>
+                <div>
+                  <strong>Buying Breakout Highs:</strong> Entering long at the peak of a swing high right when institutional smart money is preparing to distribute into your market orders.
+                </div>
+              </li>
+              <li>
+                <div class="list-icon icon-cross">&#10005;</div>
+                <div>
+                  <strong>Lagging Moving Averages & Oscillators:</strong> Waiting for delayed RSI or MACD crossovers that trigger only after 70% of the price move is already exhausted.
+                </div>
+              </li>
+              <li>
+                <div class="list-icon icon-cross">&#10005;</div>
+                <div>
+                  <strong>Getting Wicked Out:</strong> Setting tight, arbitrary stop-losses directly at obvious swing points that get swept by a 1-point wick before price takes off.
+                </div>
+              </li>
+              <li>
+                <div class="list-icon icon-cross">&#10005;</div>
+                <div>
+                  <strong>Subjective Manual Chart Drawing:</strong> Drawing arbitrary trendlines that change depending on emotions, timeframe, or personal bias.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- The ANTU LSS PRO Way -->
+          <div class="comparison-card card-pro">
+            <div class="card-badge badge-pro-chip">The ANTU LSS PRO Way</div>
+            <h3 class="card-title">Institutional Liquidity & FVG Precision</h3>
+            <ul class="comparison-list">
+              <li>
+                <div class="list-icon icon-check">&#10003;</div>
+                <div>
+                  <strong>Confirmed Liquidity Sweeps:</strong> Waits for price to probe beyond swing points, trigger stop-loss orders, and close back inside before activating a setup.
+                </div>
+              </li>
+              <li>
+                <div class="list-icon icon-check">&#10003;</div>
+                <div>
+                  <strong>Fair Value Gap Confirmation:</strong> Insists on institutional displacement—a 3-candle imbalance—proving big participants entered the market.
+                </div>
+              </li>
+              <li>
+                <div class="list-icon icon-check">&#10003;</div>
+                <div>
+                  <strong>50% Consequent Encroachment:</strong> Enters at the exact midpoint of the imbalance for maximum pricing efficiency and tighter risk parameters.
+                </div>
+              </li>
+              <li>
+                <div class="list-icon icon-check">&#10003;</div>
+                <div>
+                  <strong>ATR Volatility Buffering:</strong> Automatically adds a 14-period ATR volatility cushion beyond the sweep wick to protect against micro-wicks and noise.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- THE 4-STEP INSTITUTIONAL WORKFLOW -->
+    <section id="how-it-works" class="workflow-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">ALGORITHMIC ARCHITECTURE</span>
+          <h2 class="section-title">The 4-Step ANTU LSS PRO System Workflow</h2>
+          <p class="section-subtitle">
+            Every trade signal follows a strict, mathematical 4-stage sequential state machine inside the Pine Script.
+          </p>
+        </div>
+
+        <div class="workflow-steps">
+          
+          <div class="workflow-step-card">
+            <div class="step-num">01</div>
+            <div class="step-content">
+              <h3 class="step-title">Dynamic Liquidity Tracking</h3>
+              <p class="step-desc">
+                The script computes structural pivot highs and lows using <code>ta.pivothigh()</code> and <code>ta.pivotlow()</code> with configurable swing lengths (3 to 50 bars). Un-swept Buy-Side Liquidity (BSL) and Sell-Side Liquidity (SSL) are maintained in real-time memory arrays.
+              </p>
+              <div class="step-tag">Memory Array Trimming</div>
+            </div>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-num">02</div>
+            <div class="step-content">
+              <h3 class="step-title">Liquidity Sweep Confirmation</h3>
+              <p class="step-desc">
+                When price penetrates a tracked liquidity level during the bar, but closes back inside the structural range (<code>low &lt; lvl and close &gt; lvl</code> for SSL, or <code>high &gt; lvl and close &lt; lvl</code> for BSL), a valid sweep is confirmed. On-chart labels <strong>"SSL▲"</strong> or <strong>"BSL▼"</strong> mark the event.
+              </p>
+              <div class="step-tag">Bar Close Locked &bull; Non-Repainting</div>
+            </div>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-num">03</div>
+            <div class="step-content">
+              <h3 class="step-title">Fair Value Gap Displacement</h3>
+              <p class="step-desc">
+                A sweep alone does not trigger a trade. The indicator monitors subsequent candles for institutional displacement: a 3-bar Fair Value Gap (Bullish: <code>low &gt; high[2]</code>; Bearish: <code>high &lt; low[2]</code>) that prints after the sweep within the expiration window.
+              </p>
+              <div class="step-tag">3-Candle Imbalance Engine</div>
+            </div>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-num">04</div>
+            <div class="step-content">
+              <h3 class="step-title">50% Midpoint Retest & Risk Boxes</h3>
+              <p class="step-desc">
+                When price retraces to test the 50% midpoint (Consequent Encroachment) of the FVG, the setup executes. The script draws a dashed entry line, an ATR-buffered Stop-Loss box, and a Take-Profit box dynamically projected at 2.0x your risk distance.
+              </p>
+              <div class="step-tag">Visual TP / SL Boxes &bull; 2.0R Fixed Multiplier</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KEY FEATURES (ONLY VERIFIED FEATURES FROM PINE SCRIPT) -->
+    <section id="features" class="features-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">ENGINEERED FOR ACCURACY</span>
+          <h2 class="section-title">Built Strictly on Algorithmic Price Action</h2>
+          <p class="section-subtitle">
+            Every feature below is programmed directly into the Pine Script v6 source code. No fabricated features, no black-box nonsense.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          
+          <div class="feature-card">
+            <div class="feature-icon">📐</div>
+            <h3 class="feature-title">Algorithmic Pivot Detection</h3>
+            <p class="feature-text">
+              Customizable swing length parameter (3 to 50 bars) detects true structural pivot highs and lows without lag or chart clutter.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🧠</div>
+            <h3 class="feature-title">Dynamic Memory Queues</h3>
+            <p class="feature-text">
+              Maintains up to 10 active, un-swept SSL and BSL levels in memory. Automatically prunes swept or obsolete levels via FIFO trimming.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Confirmed Wick Rejections</h3>
+            <p class="feature-text">
+              Mathematically filters out runaway breakout trends by verifying that price penetrated the liquidity level and closed back inside.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3 class="feature-title">3-Bar FVG Imbalance Engine</h3>
+            <p class="feature-text">
+              Stores up to 20 recent bullish and bearish Fair Value Gaps in rolling memory buffers, identifying post-sweep displacement automatically.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">50% Midpoint Retest Precision</h3>
+            <p class="feature-text">
+              Executes at the exact equilibrium (Consequent Encroachment) of the FVG zone, minimizing risk exposure and maximizing payout.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3 class="feature-title">ATR Volatility Stop Cushion</h3>
+            <p class="feature-text">
+              Anchors protective stop-losses to the sweep wick extreme plus a customizable 14-period ATR buffer (default 0.5x ATR).
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3 class="feature-title">Fixed 2.0x Risk-to-Reward</h3>
+            <p class="feature-text">
+              Projects green Take-Profit target boxes calculated mathematically from your stop distance. Fully adjustable from 0.5R to 10.0R.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3 class="feature-title">Single-Position Discipline</h3>
+            <p class="feature-text">
+              The internal <code>hasOpen</code> state machine prevents taking overlapping or duplicate trades while a setup remains unresolved.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3 class="feature-title">Auto-Expiration Engine</h3>
+            <p class="feature-text">
+              Cancels pending setups if an FVG retest fails to occur within N bars (default 30 bars), ensuring stale setups are never traded.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📋</div>
+            <h3 class="feature-title">Live On-Chart Statistics HUD</h3>
+            <p class="feature-text">
+              Displays real-time market bias, rolling Win Rate %, Wins, Losses, Expired setups, and Open trade count over your chosen sample window.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3 class="feature-title">Timezone-Aware Session Filter</h3>
+            <p class="feature-text">
+              Restricts signals to designated active hours (default 09:15-15:30 IST) or customizable to 24/7 (<code>0000-2359</code>) for Forex and Crypto.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <h3 class="feature-title">Native TradingView Alerts</h3>
+            <p class="feature-text">
+              Full support for standard TradingView mobile/desktop popups plus dynamic JSON webhook payloads with actual Entry, SL, and TP prices.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET IN THE PACKAGE -->
+    <section id="package" class="package-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">COMPLETE DIGITAL BUNDLE</span>
+          <h2 class="section-title">What You Receive Upon Purchase</h2>
+          <p class="section-subtitle">
+            An all-in-one digital download containing the unencrypted Pine Script v6 source code and 4 comprehensive PDF technical guides.
+          </p>
+        </div>
+
+        <div class="package-grid">
+          
+          <div class="package-card featured-pkg">
+            <div class="pkg-header">
+              <div class="pkg-badge">CORE ASSET</div>
+              <div class="pkg-icon-large">💾</div>
+              <h3 class="pkg-title">ANTU_LSS_PRO.pine</h3>
+              <p class="pkg-subtitle">Production-Ready Pine Script v6 Source Code</p>
+            </div>
+            <ul class="pkg-checklist">
+              <li>Complete, clean, unencrypted source code</li>
+              <li>Compatible with TradingView Free & Paid plans</li>
+              <li>Zero broker lock-in &bull; Zero external servers</li>
+              <li>No repainting &bull; Bar-close confirmed signals</li>
+            </ul>
+          </div>
+
+          <div class="package-card">
+            <div class="pkg-header">
+              <div class="pkg-badge">DOCUMENTATION</div>
+              <div class="pkg-icon-large">📖</div>
+              <h3 class="pkg-title">Complete User Guide</h3>
+              <p class="pkg-subtitle">10-Page Technical Architecture Manual (PDF)</p>
+            </div>
+            <ul class="pkg-checklist">
+              <li>23 detailed chapters covering all mechanics</li>
+              <li>Deep dives on SSL, BSL, Sweeps, and FVGs</li>
+              <li>Mathematical formulas for ATR and R:R</li>
+              <li>Position sizing calculator & risk guidelines</li>
+            </ul>
+          </div>
+
+          <div class="package-card">
+            <div class="pkg-header">
+              <div class="pkg-badge">WALKTHROUGH</div>
+              <div class="pkg-icon-large">🛠️</div>
+              <h3 class="pkg-title">Installation Guide</h3>
+              <p class="pkg-subtitle">4-Page Step-by-Step Setup Walkthrough (PDF)</p>
+            </div>
+            <ul class="pkg-checklist">
+              <li>10-step visual walkthrough for TradingView</li>
+              <li>Pine Editor copy-paste guide</li>
+              <li>Input parameter optimization instructions</li>
+              <li>Troubleshooting checklist for beginners</li>
+            </ul>
+          </div>
+
+          <div class="package-card">
+            <div class="pkg-header">
+              <div class="pkg-badge">RAPID DEPLOY</div>
+              <div class="pkg-icon-large">⚡</div>
+              <h3 class="pkg-title">Quick Start Guide</h3>
+              <p class="pkg-subtitle">3-Page 2-Minute Deployment Manual (PDF)</p>
+            </div>
+            <ul class="pkg-checklist">
+              <li>9-step quick action execution checklist</li>
+              <li>Rapid chart setup summary</li>
+              <li>Trade verification rules at a glance</li>
+              <li>Instant deployment reference card</li>
+            </ul>
+          </div>
+
+          <div class="package-card">
+            <div class="pkg-header">
+              <div class="pkg-badge">NOTIFICATIONS</div>
+              <div class="pkg-icon-large">🔔</div>
+              <h3 class="pkg-title">Alert Setup Guide</h3>
+              <p class="pkg-subtitle">3-Page TradingView Notification Manual (PDF)</p>
+            </div>
+            <ul class="pkg-checklist">
+              <li>Configuring LONG, SHORT & ANY alerts</li>
+              <li>Mobile push, desktop audio & email alerts</li>
+              <li>Dynamic JSON webhook payload setup</li>
+              <li>Frequency guidance for zero repainting</li>
+            </ul>
+          </div>
+
+          <div class="package-card">
+            <div class="pkg-header">
+              <div class="pkg-badge">LEGAL & RISK</div>
+              <div class="pkg-icon-large">⚖️</div>
+              <h3 class="pkg-title">Legal & License Package</h3>
+              <p class="pkg-subtitle">Single-User License & Risk Disclaimers</p>
+            </div>
+            <ul class="pkg-checklist">
+              <li>Official Single-User Personal License</li>
+              <li>Comprehensive Financial Risk Disclaimer</li>
+              <li>Terms & Conditions of Digital Purchase</li>
+              <li>Digital Goods Refund Policy</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="package-footer-note text-center">
+          <p><em>Notice: This is a written technical documentation and source-code digital product. No video tutorial is included.</em></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRICING & SUPER PROFILE CHECKOUT SECTION -->
+    <section id="pricing" class="pricing-section">
+      <div class="pricing-glow"></div>
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">TRANSPARENT PRICING</span>
+          <h2 class="section-title">Get Lifetime Access to ANTU LSS PRO</h2>
+          <p class="section-subtitle">
+            One-time payment. No recurring monthly subscriptions. You receive the complete, unencrypted Pine Script source code.
+          </p>
+        </div>
+
+        <div class="pricing-card-wrapper">
+          <div class="pricing-card">
+            <div class="pricing-badge-popular">LAUNCH SPECIAL &bull; 50% OFF</div>
+            
+            <div class="pricing-header">
+              <h3 class="pricing-title">ANTU LSS PRO Package</h3>
+              <p class="pricing-desc">The Complete Liquidity Sweep + Fair Value Gap Trading System</p>
+              
+              <div class="pricing-price-box">
+                <div class="price-original">
+                  <span>Regular Price:</span>
+                  <del>₹1,999</del>
+                </div>
+                <div class="price-current">
+                  <span class="currency">₹</span>
+                  <span class="amount">999</span>
+                  <span class="terms">one-time payment</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="pricing-features">
+              <h4 class="features-header">WHAT YOU RECEIVE TODAY:</h4>
+              <ul class="pricing-checklist">
+                <li><span class="check-icon">&#10003;</span> <strong>ANTU_LSS_PRO.pine</strong> — Full Pine Script v6 Source Code</li>
+                <li><span class="check-icon">&#10003;</span> <strong>Complete User Guide (PDF)</strong> — 10 Pages, 23 Chapters</li>
+                <li><span class="check-icon">&#10003;</span> <strong>Installation Guide (PDF)</strong> — Step-by-Step Walkthrough</li>
+                <li><span class="check-icon">&#10003;</span> <strong>Quick Start Guide (PDF)</strong> — 2-Minute Deployment Rules</li>
+                <li><span class="check-icon">&#10003;</span> <strong>Alert Setup Guide (PDF)</strong> — Real-Time Notification Guide</li>
+                <li><span class="check-icon">&#10003;</span> <strong>Single-User Personal License</strong> &bull; Lifetime Usage</li>
+                <li><span class="check-icon">&#10003;</span> <strong>TradingView Free & Paid</strong> Compatibility</li>
+                <li><span class="check-icon">&#10003;</span> <strong>Instant Access to Download Portal</strong> immediately after payment</li>
+              </ul>
+            </div>
+
+            <div class="pricing-cta-box">
+              <a href="https://razorpay.me/@amolshivajiparit" target="_blank" rel="noopener noreferrer" class="btn-primary btn-block btn-lg" id="pricing-buy-btn" style="text-decoration: none;">
+                <span>GET ANTU LSS PRO — ₹999</span>
+                <span class="btn-arrow">&rarr;</span>
+              </a>
+              <div style="display: flex; justify-content: center; gap: 1rem; align-items: center; margin-top: 0.5rem; flex-wrap: wrap;">
+                <button class="btn-secondary btn-sm" id="checkout-modal-btn" style="font-size: 0.8rem; padding: 0.4rem 0.95rem;">
+                  <span>📋 Review Package Contents</span>
+                </button>
+              </div>
+              <div class="secure-badge" style="margin-top: 0.5rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                <span>Instant Digital Access &bull; 100% Safe &amp; Secure via Razorpay (UPI, GPay, Cards)</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
+    <section id="faq" class="faq-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag">COMMON QUESTIONS</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Everything you need to know about ANTU LSS PRO, installation, alerts, and market compatibility.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faq-accordion-list">
+          
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is ANTU LSS PRO?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>ANTU LSS PRO is a specialized TradingView technical analysis indicator built around Smart Money Concepts: Liquidity Sweeps (SSL/BSL) and Fair Value Gaps (FVG). It automatically detects when market liquidity has been swept, waits for an imbalance (FVG) to form in the reversal direction, plots visual entry, stop-loss, and take-profit boxes on the chart, and delivers real-time TradingView alerts.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Do I receive the full Pine Script source code?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! ANTU LSS PRO is a source-code digital product. You receive the complete, unencrypted, open Pine Script v6 source code file (<code>ANTU_LSS_PRO.pine</code>). You can inspect every calculation, review how the arrays and sweeps operate, and add it directly to your personal TradingView Pine Editor.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Does the indicator repaint?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. Historical signals calculate strictly on confirmed candle data. Sweeps are checked on historical pivots, and alerts are configured to trigger "Once Per Bar Close" (<code>alert.freq_once_per_bar_close</code>). Once a candle closes, the signal is permanently fixed and will never disappear or shift retrospectively.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Does it require a paid TradingView account?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. ANTU LSS PRO functions smoothly on the free ("Basic") TradingView tier. Note that free TradingView accounts have limits on the number of simultaneous active server alerts (usually 1 active alert on free plans, higher on Essential/Plus/Premium plans).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Does it require any broker integration or external API?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>No. ANTU LSS PRO runs 100% natively on TradingView. It has zero external server dependencies, zero broker dependencies, and requires no third-party APIs or bridges.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Does it work on any market or timeframe?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. The mathematical logic (Pivots, Sweeps, and FVGs) applies to any financial asset available on TradingView—including Indian Equities (NSE/BSE), Nifty/Bank Nifty indices, US Equities, Forex pairs, Commodities (Gold, Silver, Crude), and Cryptocurrencies. The built-in Session filter defaults to the Indian market session (<code>0915-1530</code> IST); for 24/7 or overseas markets, simply adjust the session input to <code>0000-2359</code>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Which timeframe is recommended?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For intraday day-trading and scalping, 3-minute, 5-minute, and 15-minute charts are most commonly utilized. For swing trading or positional analysis, the 1-hour and 4-hour charts provide clean structural clarity.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Does ANTU LSS PRO guarantee trading profits?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>NO. Absolute transparency: No technical indicator, strategy, or algorithm can guarantee profits or eliminate trading risk. Financial trading involves risk of loss. ANTU LSS PRO is a visual and analytical decision-support tool; profitability depends entirely on your risk management, execution discipline, and market conditions.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I configure real-time alerts?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>With the indicator on your chart, click the Alert clock icon, choose ANTU LSS PRO as the condition, select "ANTU LSS PRO Long", "ANTU LSS PRO Short", or "ANTU LSS PRO Any" (or "Any alert() function call" for dynamic JSON payloads), set the frequency to "Once Per Bar Close", and click Create.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I modify the Pine Script code?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, for your own personal use. Because you receive the raw Pine Script code, you may study it or tweak settings. However, any modification is done at your own risk.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>Can I share or resell the code?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>NO. Your purchase grants a single-user personal license. Redistributing, uploading publicly to the TradingView library or GitHub, sharing in groups (Telegram, WhatsApp, Discord), or reselling the code or guides is strictly prohibited and constitutes copyright infringement.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>What is the refund policy?</span>
+              <span class="faq-toggle-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Due to the digital and open source-code nature of this product, all sales are considered final once accessed or downloaded. Refunds are granted strictly in the event of duplicate billing or verifiable file delivery failure. Consult the included Refund_Policy.txt for details.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OFFICIAL REGULATORY & RISK DISCLAIMER -->
+    <section class="disclaimer-section">
+      <div class="container">
+        <div class="disclaimer-card">
+          <h4 class="disclaimer-title">IMPORTANT REGULATORY & RISK DISCLAIMER</h4>
+          <p class="disclaimer-text">
+            ANTU LSS PRO is a mathematical and algorithmic technical-analysis indicator designed exclusively for use on the TradingView platform. It is developed solely for educational, informational, and charting analysis purposes. Nothing contained within the Pine Script code, documentation, guides, alerts, or accompanying materials constitutes financial, investment, legal, tax, or trading advice.
+          </p>
+          <p class="disclaimer-text">
+            Trading financial markets—including equities, futures, options, currencies (Forex), commodities, and crypto-assets—involves substantial risk of financial loss. ANTU LSS PRO does NOT guarantee profits, positive returns, specific win rates, or immunity from capital loss. Past or simulated performance displayed on charts or in documentation is no guarantee of future results. Every user is solely responsible for their own trading decisions and capital allocation.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">ANTU LSS <span class="badge-pro">PRO</span></div>
+        <p class="footer-tagline">Institutional Liquidity Sweep & Fair Value Gap Trading System for TradingView.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#how-it-works">How It Works</a>
+        <a href="#simulator">Simulator</a>
+        <a href="#features">Features</a>
+        <a href="#package">Package</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 ANTU LSS PRO. All Rights Reserved. Single-User Personal License.
+      </div>
+    </div>
+  </footer>
+
+  <!-- PURCHASE / CHECKOUT MODAL -->
+  <div id="checkout-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-badge">RAZORPAY 100% SECURE CHECKOUT</div>
+        <h3 class="modal-title">Get ANTU LSS PRO</h3>
+        <p class="modal-subtitle">Instant Digital Access &bull; Pine Script v6 Source Code + 4 PDF Guides</p>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-price-strip">
+          <div class="strip-label">Launch Price:</div>
+          <div class="strip-price">
+            <span class="strip-old">₹1,999</span>
+            <span class="strip-new">₹999</span>
+          </div>
+        </div>
+
+        <div class="modal-includes">
+          <div class="include-item">&#10003; <strong>ANTU_LSS_PRO.pine</strong> (Pine Script v6 Code)</div>
+          <div class="include-item">&#10003; <strong>10-Page Master User Guide</strong> (PDF)</div>
+          <div class="include-item">&#10003; <strong>4-Page Installation Guide</strong> (PDF)</div>
+          <div class="include-item">&#10003; <strong>3-Page Quick Start Guide</strong> (PDF)</div>
+          <div class="include-item">&#10003; <strong>3-Page Alert Setup Guide</strong> (PDF)</div>
+          <div class="include-item">&#10003; <strong>Lifetime Personal License</strong></div>
+        </div>
+
+        <div class="modal-cta-box">
+          <!-- Razorpay Payment Link -->
+          <a href="https://razorpay.me/@amolshivajiparit" target="_blank" rel="noopener noreferrer" class="btn-primary btn-block btn-lg" id="razorpay-direct-btn">
+            <span>Proceed to Razorpay Payment (₹999) &rarr;</span>
+          </a>
+          <p class="modal-note">
+            Pay securely via UPI (Google Pay, PhonePe, Paytm, BHIM), Debit/Credit Cards, or NetBanking. Once payment is complete, access your instant download dashboard!
+          </p>
+          <div style="text-align: center; margin-top: 1rem; padding-top: 0.85rem; border-top: 1px solid var(--border-subtle); color: var(--text-secondary); font-size: 0.82rem;">
+            🔒 <em>Downloads and Pine Script source code are unlocked instantly upon payment confirmation.</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>

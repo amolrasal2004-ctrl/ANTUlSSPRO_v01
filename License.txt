@@ -1,0 +1,43 @@
+================================================================================
+                         SINGLE-USER PRODUCT LICENSE
+                                ANTU LSS PRO
+================================================================================
+
+PRODUCT: ANTU LSS PRO (TradingView Pine Script Indicator + Documentation Package)
+LICENSOR: EVLabs / Product Creator
+LICENSE TYPE: Single Purchaser, Non-Exclusive Personal Use License
+
+NOTICE: This document is a software product license agreement, not formal legal advice.
+
+1. GRANT OF LICENSE
+Subject to the terms of this License Agreement, the Licensor grants the original 
+individual purchaser ("Customer") a non-exclusive, non-transferable, revocable license 
+to download, view, paste, and run the ANTU LSS PRO Pine Script source code exclusively 
+for personal trading and charting analysis on TradingView.
+
+2. WHAT THE CUSTOMER MAY DO:
+✓ Install and run the indicator on their personal TradingView account(s).
+✓ Adjust user-configurable parameters (Swing Length, ATR Multiplier, R:R Ratio, etc.) 
+  to match their personal trading style and timeframe preferences.
+✓ Study the Pine Script source code for personal educational and analytical understanding.
+✓ Configure native TradingView alerts on their personal charts for real-time notification.
+
+3. WHAT THE CUSTOMER MAY NOT DO (STRICT PROHIBITIONS):
+✗ Resell, relicense, rent, lease, or commercially exploit the Pine Script code or guides.
+✗ Redistribute, share, or transfer the source code or documentation to any third party.
+✗ Publicly publish the source code on GitHub, TradingView Public Library, forums, or websites.
+✗ Share files or text snippets across public or private Telegram, Discord, or WhatsApp groups.
+✗ White-label, rename, or slightly alter the code to market or sell it as a competing product.
+✗ Provide a paid commercial "signal broadcast" or "copy-trading" service derived exclusively 
+  from public distribution of this script without an explicit commercial partnership agreement.
+
+4. INTELLECTUAL PROPERTY RIGHTS
+All copyright, intellectual property rights, and title in the software and documentation 
+belong to the Licensor. No ownership transfer takes place upon sale.
+
+5. TERMINATION
+This license is effective until terminated. Violation of any restriction outlined in 
+Section 3 will automatically terminate this license without notice or refund, and may 
+subject the violator to civil liability.
+
+BY USING OR APPLYING ANTU LSS PRO, YOU AGREE TO BE BOUND BY THESE LICENSE TERMS.

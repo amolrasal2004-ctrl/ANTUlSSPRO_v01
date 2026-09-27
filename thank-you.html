@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful — Download ANTU LSS PRO</title>
+  <meta name="description" content="Thank you for your purchase of ANTU LSS PRO. Download your Pine Script source code and PDF guides immediately.">
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Specific styles for Thank You page */
+    .success-hero {
+      padding: 4rem 0 3rem;
+      text-align: center;
+      position: relative;
+    }
+    .success-icon-wrap {
+      width: 5rem;
+      height: 5rem;
+      margin: 0 auto 1.5rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 2px solid var(--accent-green);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-green-bright);
+      box-shadow: 0 0 35px var(--accent-green-glow);
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    @keyframes popIn {
+      from { transform: scale(0.4); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    .success-title {
+      font-size: 2.75rem;
+      margin-bottom: 0.75rem;
+    }
+    .success-subtitle {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+    .master-download-card {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(15, 23, 42, 0.85) 100%);
+      border: 2px solid var(--accent-green);
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto 3.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), var(--shadow-glow);
+    }
+    .master-dl-btn {
+      font-size: 1.2rem;
+      padding: 1.1rem 2.5rem;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .files-grid-section {
+      margin-bottom: 4rem;
+    }
+    .files-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .file-download-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 0.85rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-normal);
+    }
+    .file-download-card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+    .file-card-top {
+      margin-bottom: 1.25rem;
+    }
+    .file-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .file-title {
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-bottom: 0.35rem;
+    }
+    .file-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .file-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.6rem 1rem;
+      background: #172033;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.45rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    .file-action-btn:hover {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
+      color: #060911;
+    }
+    .code-box-section {
+      background: #080c14;
+      border: 1px solid var(--border-subtle);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto 4rem;
+    }
+    .code-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .code-box-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .copy-code-btn {
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: #ffffff;
+      border: none;
+      border-radius: 0.45rem;
+      padding: 0.6rem 1.25rem;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: var(--transition-fast);
+      box-shadow: 0 4px 15px var(--accent-green-glow);
+    }
+    .copy-code-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.45);
+    }
+    .code-scroll-area {
+      background: #05070d;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 0.5rem;
+      max-height: 380px;
+      overflow-y: auto;
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+      white-space: pre;
+    }
+    .copy-feedback-msg {
+      display: none;
+      color: var(--accent-green-bright);
+      font-weight: 600;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+    }
+    .copy-feedback-msg.show {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 900px) {
+      .files-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body id="page-top">
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+            <polyline points="16 7 22 7 22 13"></polyline>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">ANTU LSS <span class="badge-pro">PRO</span></span>
+          <span class="logo-subtitle">Customer Download Portal</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn-secondary btn-sm">
+          <span>&larr; Return to Homepage</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- LOCKED GATE (Visible if user visits without completing payment) -->
+    <div id="locked-gate" class="container" style="display: none; padding: 2rem 0;">
+      <div style="background: #090e1a; border: 1px solid rgba(239, 68, 68, 0.4); border-radius: 1.25rem; padding: 3.5rem 2rem; max-width: 660px; margin: 2rem auto; text-align: center; box-shadow: 0 0 50px rgba(239, 68, 68, 0.15);">
+        
+        <div style="width: 5rem; height: 5rem; margin: 0 auto 1.5rem; background: rgba(239, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #f87171; font-size: 2.2rem; box-shadow: 0 0 35px rgba(239, 68, 68, 0.3);">
+          🔒
+        </div>
+
+        <span class="chip" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); margin-bottom: 1rem; display: inline-block;">
+          ACCESS RESTRICTED &bull; PAYMENT REQUIRED
+        </span>
+
+        <h1 style="font-size: 2.1rem; color: #ffffff; margin-bottom: 0.75rem;">Payment Verification Required</h1>
+        
+        <p style="font-size: 0.98rem; color: var(--text-secondary); max-width: 520px; margin: 0 auto 1.75rem; line-height: 1.6;">
+          Yeh download portal kewal unhi clients ke liye reserved hai jinhone <strong>ANTU LSS PRO</strong> ka ₹999 payment successfully complete kiya hai. Download files access karne ke liye pehle payment karein.
+        </p>
+
+        <!-- Direct Pay CTA -->
+        <a href="https://razorpay.me/@amolshivajiparit" target="_blank" rel="noopener noreferrer" class="btn-primary btn-lg" style="text-decoration: none; display: inline-flex; width: 100%; max-width: 440px; margin-bottom: 1.75rem; justify-content: center;">
+          <span>👉 Pay ₹999 via Razorpay to Unlock &rarr;</span>
+        </a>
+
+        <!-- Already Paid Verification Box -->
+        <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid var(--border-subtle); border-radius: 0.75rem; padding: 1.5rem; max-width: 460px; margin: 0 auto; text-align: left;">
+          <label for="unlock-pay-id" style="display: block; font-size: 0.85rem; font-weight: 600; color: #f8fafc; margin-bottom: 0.5rem;">
+            Agar aapne payment kar diya hai, Payment ID daalein:
+          </label>
+          <div style="display: flex; gap: 0.5rem;">
+            <input type="text" id="unlock-pay-id" placeholder="e.g. pay_Q8x9L... ya Mobile No." style="flex: 1; padding: 0.65rem 0.85rem; background: #070a12; border: 1px solid #334155; border-radius: 0.45rem; color: #ffffff; font-size: 0.85rem;">
+            <button id="btn-unlock-portal" class="btn-primary" style="padding: 0.65rem 1.15rem; font-size: 0.85rem; white-space: nowrap;">
+              <span>Unlock</span>
+            </button>
+          </div>
+          <p id="unlock-error" style="color: #ef4444; font-size: 0.8rem; margin-top: 0.5rem; display: none;"></p>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <a href="index.html" style="color: var(--text-secondary); font-size: 0.85rem; text-decoration: underline;">
+            &larr; Return to Product Homepage
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VERIFIED PORTAL (Hidden until payment is confirmed) -->
+    <div id="verified-portal" style="display: none;">
+      <!-- SUCCESS HERO -->
+      <section class="success-hero">
+        <div class="container">
+        
+        <div class="success-icon-wrap">
+          <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+
+        <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+          <span class="pulse-tag">TRANSACTION CONFIRMED</span>
+          <span class="chip chip-tech" style="font-size: 0.78rem;">Payment Ref: <strong id="payment-ref-id" style="color: #38bdf8;">VERIFIED</strong></span>
+        </div>
+        <h1 class="success-title">Payment Successful! Welcome to <span class="gradient-text">ANTU LSS PRO</span></h1>
+        <p class="success-subtitle">
+          Thank you for your purchase! Your complete TradingView Pine Script source code and technical guides are ready for immediate download below.
+        </p>
+
+        <!-- MASTER ZIP DOWNLOAD BOX -->
+        <div class="master-download-card">
+          <span class="chip chip-tech" style="margin-bottom: 0.75rem;">ALL-IN-ONE DOWNLOAD</span>
+          <h2 style="font-size: 1.85rem; margin-bottom: 0.5rem; color: #ffffff;">Download Complete ANTU LSS PRO Package</h2>
+          <p style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+            Contains <strong>ANTU_LSS_PRO.pine</strong> source code, all 4 comprehensive PDF manuals, setup checklist, and legal license in a single compressed archive.
+          </p>
+          <a href="downloads/ANTU_LSS_PRO_PACKAGE.zip" download="ANTU_LSS_PRO_PACKAGE.zip" class="btn-primary btn-lg master-dl-btn" id="btn-master-download">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>DOWNLOAD COMPLETE PACKAGE (.ZIP)</span>
+            <span class="btn-subtext">Version 1.0 &bull; 677 KB &bull; Instant Download</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 1-CLICK PINE SCRIPT COPY BOX -->
+    <section class="container">
+      <div class="code-box-section">
+        <div class="code-box-header">
+          <div>
+            <div class="code-box-title">
+              <span>📄 Pine Script Source Code</span>
+              <span class="chip chip-zero">v6 Production Ready</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">
+              You can copy the code directly without opening any text editor.
+            </p>
+          </div>
+          <button class="copy-code-btn" id="btn-copy-code">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy Pine Script Code</span>
+          </button>
+        </div>
+
+        <div class="copy-feedback-msg" id="copy-feedback">
+          ✓ Copied to clipboard! Now open TradingView &rarr; Pine Editor &rarr; Paste &rarr; Add to chart.
+        </div>
+
+        <pre class="code-scroll-area" id="pine-code-block">// This source code is subject to the terms of the Mozilla Public License 2.0
+// © ANTU LSS PRO
+//@version=6
+indicator("ANTU LSS PRO", shorttitle="ANTU LSS PRO", overlay=true,
+         max_labels_count=300, max_lines_count=300, max_boxes_count=300)
+
+// ─── Inputs ───────────────────────────────────────────────────────────────────
+swingLen     = input.int(10,    "Swing Length",              minval=3,   maxval=50,  group="Detection", tooltip="Number of bars to confirm pivot highs and lows.")
+maxLevels    = input.int(5,     "Max Liq Levels",            minval=1,   maxval=10,  group="Detection", tooltip="Maximum active liquidity levels tracked in memory.")
+atrMult      = input.float(0.5, "SL ATR Buffer",             minval=0.1, step=0.1,   group="Risk",      tooltip="ATR multiplier added to sweep wick for stop loss placement.")
+rrRatio      = input.float(2.0, "R:R Ratio",                 minval=0.5, step=0.1,   group="Risk",      tooltip="Risk-to-Reward ratio for take profit calculation.")
+expireBars   = input.int(30,    "Expire setup after N bars", minval=3,   maxval=200, group="Risk",      tooltip="Setup invalidates if entry FVG is not tested within N bars.")
+statsLen     = input.int(20,    "Stats: Last N Signals",     minval=5,   maxval=100, group="Stats",     tooltip="Number of recent signals evaluated in on-chart stats table.")
+showDebug    = input.bool(true, "Show setup markers",        group="Stats",                          tooltip="Display SSL and BSL sweep marker labels on chart.")
+sessionIndia = input.session("0915-1530", "Market Session (Kolkata)", group="Sessions",            tooltip="Trading session filter (Asia/Kolkata timezone).")
+longCol      = input.color(color.new(#26a69a, 0), "Long Color",  group="Visuals")
+shortCol     = input.color(color.new(#ef5350, 0), "Short Color", group="Visuals")
+boxWidth     = input.int(30, "Box Width after entry (bars)", minval=5, maxval=100, group="Visuals", tooltip="Horizontal length of TP/SL projection boxes in bars.")
+
+// ─── Session ──────────────────────────────────────────────────────────────────
+inSession = not na(time(timeframe.period, sessionIndia, "Asia/Kolkata"))
+
+atr = ta.atr(14)
+
+// ─── Pivots → Liquidity ───────────────────────────────────────────────────────
+swingH = ta.pivothigh(high, swingLen, swingLen)
+swingL = ta.pivotlow(low,  swingLen, swingLen)
+
+var float[] bslLvls  = array.new_float()
+var bool[]  bslSwept = array.new_bool()
+var float[] sslLvls  = array.new_float()
+var bool[]  sslSwept = array.new_bool()
+
+f_trimLiq(float[] lvls, bool[] sw, int maxN) =>
+    while array.size(lvls) > maxN
+        array.shift(lvls)
+        array.shift(sw)
+
+if not na(swingH)
+    array.push(bslLvls, swingH)
+    array.push(bslSwept, false)
+    f_trimLiq(bslLvls, bslSwept, maxLevels)
+
+if not na(swingL)
+    array.push(sslLvls, swingL)
+    array.push(sslSwept, false)
+    f_trimLiq(sslLvls, sslSwept, maxLevels)
+
+// ─── FVG ──────────────────────────────────────────────────────────────────────
+bullFVG = low > high[2]
+bearFVG = high < low[2]
+
+var float[] bFvgTop = array.new_float()
+var float[] bFvgBot = array.new_float()
+var int[]   bFvgBar = array.new_int()
+var float[] sFvgTop = array.new_float()
+var float[] sFvgBot = array.new_float()
+var int[]   sFvgBar = array.new_int()
+
+if bullFVG
+    array.push(bFvgTop, low)
+    array.push(bFvgBot, high[2])
+    array.push(bFvgBar, bar_index)
+if bearFVG
+    array.push(sFvgTop, low[2])
+    array.push(sFvgBot, high)
+    array.push(sFvgBar, bar_index)
+
+maxFvg = 20
+while array.size(bFvgTop) > maxFvg
+    array.shift(bFvgTop)
+    array.shift(bFvgBot)
+    array.shift(bFvgBar)
+while array.size(sFvgTop) > maxFvg
+    array.shift(sFvgTop)
+    array.shift(sFvgBot)
+    array.shift(sFvgBar)
+
+// ─── Sweeps ───────────────────────────────────────────────────────────────────
+sslSweep  = false
+bslSweep  = false
+sweepLow  = 0.0
+sweepHigh = 0.0
+
+nb = array.size(sslLvls)
+if nb > 0
+    for i = 0 to nb - 1
+        if not array.get(sslSwept, i)
+            lvl = array.get(sslLvls, i)
+            if low < lvl and close > lvl
+                array.set(sslSwept, i, true)
+                sslSweep := true
+                sweepLow := low
+
+nc = array.size(bslLvls)
+if nc > 0
+    for i = 0 to nc - 1
+        if not array.get(bslSwept, i)
+            lvl = array.get(bslLvls, i)
+            if high > lvl and close < lvl
+                array.set(bslSwept, i, true)
+                bslSweep := true
+                sweepHigh := high
+
+// ─── Signal tracking ──────────────────────────────────────────────────────────
+var int[]   sigDir    = array.new_int()
+var float[] sigEntry  = array.new_float()
+var float[] sigSL     = array.new_float()
+var float[] sigTP     = array.new_float()
+var int[]   sigResult = array.new_int()
+var int[]   sigBar    = array.new_int()
+var box[]   sigTpBox  = array.new_box()
+var box[]   sigSlBox  = array.new_box()
+var line[]  sigEntryL = array.new_line()
+
+nSig = array.size(sigDir)
+if nSig > 0
+    for i = 0 to nSig - 1
+        if array.get(sigResult, i) == 0
+            d        = array.get(sigDir, i)
+            tp       = array.get(sigTP,  i)
+            sl       = array.get(sigSL,  i)
+            age      = bar_index - array.get(sigBar, i)
+            resolved = false
+            if age >= expireBars * 3
+                array.set(sigResult, i, 2)
+                resolved := true
+            else if d == 1
+                if high >= tp
+                    array.set(sigResult, i, 1)
+                    resolved := true
+                else if low <= sl
+                    array.set(sigResult, i, -1)
+                    resolved := true
+            else
+                if low <= tp
+                    array.set(sigResult, i, 1)
+                    resolved := true
+                else if high >= sl
+                    array.set(sigResult, i, -1)
+                    resolved := true
+            if resolved
+                box.set_right(array.get(sigTpBox,  i), bar_index)
+                box.set_right(array.get(sigSlBox,  i), bar_index)
+                line.set_x2(array.get(sigEntryL,   i), bar_index)
+
+hasOpen = false
+nSig2 = array.size(sigResult)
+if nSig2 > 0
+    for i = 0 to nSig2 - 1
+        if array.get(sigResult, i) == 0
+            hasOpen := true
+
+while array.size(sigDir) > statsLen
+    array.shift(sigDir)
+    array.shift(sigEntry)
+    array.shift(sigSL)
+    array.shift(sigTP)
+    array.shift(sigResult)
+    array.shift(sigBar)
+    array.shift(sigTpBox)
+    array.shift(sigSlBox)
+    array.shift(sigEntryL)
+
+// ─── Setup state ─────────────────────────────────────────────────────────────
+var bool  lookLong  = false
+var bool  lookShort = false
+var int   setupBarL = 0
+var int   setupBarS = 0
+var float setupSLL  = 0.0
+var float setupSLS  = 0.0
+var int   lastBias  = 0
+
+if sslSweep and inSession and not hasOpen
+    lookLong  := true
+    lookShort := false
+    setupBarL := bar_index
+    setupSLL  := sweepLow - atr * atrMult
+    lastBias  := 1
+    if showDebug
+        label.new(bar_index, low, "SSL▲", style=label.style_label_up,
+                  color=color.new(longCol, 50), textcolor=color.white, size=size.tiny)
+
+if bslSweep and inSession and not hasOpen
+    lookShort := true
+    lookLong  := false
+    setupBarS := bar_index
+    setupSLS  := sweepHigh + atr * atrMult
+    lastBias  := -1
+    if showDebug
+        label.new(bar_index, high, "BSL▼", style=label.style_label_down,
+                  color=color.new(shortCol, 50), textcolor=color.white, size=size.tiny)
+
+if not inSession
+    lookLong  := false
+    lookShort := false
+
+if lookLong  and (bar_index - setupBarL) > expireBars
+    lookLong  := false
+if lookShort and (bar_index - setupBarS) > expireBars
+    lookShort := false
+
+// ─── Entry ────────────────────────────────────────────────────────────────────
+newLong  = false
+newShort = false
+
+if lookLong and not hasOpen
+    nf = array.size(bFvgBar)
+    if nf > 0
+        for i = nf - 1 to 0
+            if array.get(bFvgBar, i) > setupBarL
+                fTop = array.get(bFvgTop, i)
+                fBot = array.get(bFvgBot, i)
+                mid  = (fTop + fBot) / 2
+                if low <= fTop and close > fBot
+                    entryP = mid
+                    slP    = setupSLL
+                    slDist = entryP - slP
+                    if slDist > 0
+                        tpP = entryP + slDist * rrRatio
+                        x1  = bar_index
+                        x2  = bar_index + boxWidth
+                        bTP = box.new(x1, tpP, x2, entryP,
+                                      border_color=color.new(#26a69a, 30), bgcolor=color.new(#26a69a, 75),
+                                      text="TP " + str.tostring(tpP, "#.#####"),
+                                      text_color=color.new(color.white, 20),
+                                      text_size=size.small, text_halign=text.align_right, text_valign=text.align_top)
+                        bSL = box.new(x1, entryP, x2, slP,
+                                      border_color=color.new(#ef5350, 30), bgcolor=color.new(#ef5350, 75),
+                                      text="SL " + str.tostring(slP, "#.#####"),
+                                      text_color=color.new(color.white, 20),
+                                      text_size=size.small, text_halign=text.align_right, text_valign=text.align_bottom)
+                        ln = line.new(x1, entryP, x2, entryP, color=color.white, width=2, style=line.style_dashed)
+                        label.new(x1, entryP, "▶ LONG  " + str.tostring(entryP, "#.#####"),
+                                  style=label.style_label_right, color=color.white, textcolor=color.black, size=size.small)
+                        array.push(sigDir, 1)
+                        array.push(sigEntry, entryP)
+                        array.push(sigSL, slP)
+                        array.push(sigTP, tpP)
+                        array.push(sigResult, 0)
+                        array.push(sigBar, bar_index)
+                        array.push(sigTpBox, bTP)
+                        array.push(sigSlBox, bSL)
+                        array.push(sigEntryL, ln)
+                        lookLong := false
+                        newLong  := true
+
+                        // Structured alert payload with calculated Entry, SL, and TP values
+                        longMsg = '{"action":"BUY","signal":"LONG","indicator":"ANTU LSS PRO","ticker":"' + syminfo.ticker + '","exchange":"' + syminfo.prefix + '","interval":"' + timeframe.period + '","entry":' + str.tostring(entryP, format.mintick) + ',"sl":' + str.tostring(slP, format.mintick) + ',"tp":' + str.tostring(tpP, format.mintick) + '}'
+                        alert(longMsg, alert.freq_once_per_bar_close)
+                        break
+
+if lookShort and not hasOpen
+    nf = array.size(sFvgBar)
+    if nf > 0
+        for i = nf - 1 to 0
+            if array.get(sFvgBar, i) > setupBarS
+                fTop = array.get(sFvgTop, i)
+                fBot = array.get(sFvgBot, i)
+                mid  = (fTop + fBot) / 2
+                if high >= fBot and close < fTop
+                    entryP = mid
+                    slP    = setupSLS
+                    slDist = slP - entryP
+                    if slDist > 0
+                        tpP = entryP - slDist * rrRatio
+                        x1  = bar_index
+                        x2  = bar_index + boxWidth
+                        bTP = box.new(x1, entryP, x2, tpP,
+                                      border_color=color.new(#26a69a, 30), bgcolor=color.new(#26a69a, 75),
+                                      text="TP " + str.tostring(tpP, "#.#####"),
+                                      text_color=color.new(color.white, 20),
+                                      text_size=size.small, text_halign=text.align_right, text_valign=text.align_bottom)
+                        bSL = box.new(x1, slP, x2, entryP,
+                                      border_color=color.new(#ef5350, 30), bgcolor=color.new(#ef5350, 75),
+                                      text="SL " + str.tostring(slP, "#.#####"),
+                                      text_color=color.new(color.white, 20),
+                                      text_size=size.small, text_halign=text.align_right, text_valign=text.align_bottom)
+                        ln = line.new(x1, entryP, x2, entryP, color=color.white, width=2, style=line.style_dashed)
+                        label.new(x1, entryP, "▶ SHORT  " + str.tostring(entryP, "#.#####"),
+                                  style=label.style_label_right, color=color.white, textcolor=color.black, size=size.small)
+                        array.push(sigDir, -1)
+                        array.push(sigEntry, entryP)
+                        array.push(sigSL, slP)
+                        array.push(sigTP, tpP)
+                        array.push(sigResult, 0)
+                        array.push(sigBar, bar_index)
+                        array.push(sigTpBox, bTP)
+                        array.push(sigSlBox, bSL)
+                        array.push(sigEntryL, ln)
+                        lookShort := false
+                        newShort  := true
+
+                        // Structured alert payload with calculated Entry, SL, and TP values
+                        shortMsg = '{"action":"SELL","signal":"SHORT","indicator":"ANTU LSS PRO","ticker":"' + syminfo.ticker + '","exchange":"' + syminfo.prefix + '","interval":"' + timeframe.period + '","entry":' + str.tostring(entryP, format.mintick) + ',"sl":' + str.tostring(slP, format.mintick) + ',"tp":' + str.tostring(tpP, format.mintick) + '}'
+                        alert(shortMsg, alert.freq_once_per_bar_close)
+                        break
+
+// ─── Stats table ─────────────────────────────────────────────────────────────
+var table tbl = table.new(position.top_right, 2, 8,
+                           bgcolor=color.new(color.black, 75), border_width=1,
+                           border_color=color.new(color.gray, 60))
+
+if barstate.islast
+    wins   = 0
+    losses = 0
+    openS  = 0
+    exp    = 0
+    n = array.size(sigResult)
+    if n > 0
+        for i = 0 to n - 1
+            r = array.get(sigResult, i)
+            if r == 1
+                wins += 1
+            else if r == -1
+                losses += 1
+            else if r == 2
+                exp += 1
+            else
+                openS += 1
+    total = wins + losses
+    wr    = total > 0 ? wins / total * 100 : 0.0
+    wrCol = wr >= 50 ? color.new(#26a69a, 0) : color.new(#ef5350, 0)
+
+    biasStr = lastBias == 1 ? "Bullish ▲" : lastBias == -1 ? "Bearish ▼" : "–"
+    biasCol = lastBias == 1 ? color.new(#26a69a, 0) : lastBias == -1 ? color.new(#ef5350, 0) : color.new(color.gray, 0)
+
+    table.cell(tbl, 0, 0, "ANTU LSS PRO", text_color=color.white, text_size=size.small, bgcolor=color.new(color.black, 50))
+    table.cell(tbl, 1, 0, "Signals",      text_color=color.gray,  text_size=size.small, bgcolor=color.new(color.black, 50))
+    table.cell(tbl, 0, 1, "Bias",         text_color=color.gray,  text_size=size.small)
+    table.cell(tbl, 1, 1, biasStr,        text_color=biasCol,     text_size=size.normal)
+    table.cell(tbl, 0, 2, "Win Rate",     text_color=color.gray,  text_size=size.small)
+    table.cell(tbl, 1, 2, str.tostring(wr, "#.0") + "%", text_color=wrCol, text_size=size.normal)
+    table.cell(tbl, 0, 3, "Wins",         text_color=color.gray,  text_size=size.small)
+    table.cell(tbl, 1, 3, str.tostring(wins),   text_color=color.new(#26a69a, 0), text_size=size.small)
+    table.cell(tbl, 0, 4, "Losses",       text_color=color.gray,  text_size=size.small)
+    table.cell(tbl, 1, 4, str.tostring(losses), text_color=color.new(#ef5350, 0), text_size=size.small)
+    table.cell(tbl, 0, 5, "Expired",      text_color=color.gray,  text_size=size.small)
+    table.cell(tbl, 1, 5, str.tostring(exp),    text_color=color.gray,            text_size=size.small)
+    table.cell(tbl, 0, 6, "Open",         text_color=color.gray,  text_size=size.small)
+    table.cell(tbl, 1, 6, str.tostring(openS),  text_color=color.white,           text_size=size.small)
+    table.cell(tbl, 0, 7, "Sample",       text_color=color.gray,  text_size=size.small)
+    table.cell(tbl, 1, 7, str.tostring(total) + "/" + str.tostring(statsLen), text_color=color.gray, text_size=size.small)
+
+// ─── Alerts ───────────────────────────────────────────────────────────────────
+alertcondition(newLong,             "ANTU LSS PRO Long",  "ANTU LSS PRO — LONG Signal on {{ticker}} ({{interval}})")
+alertcondition(newShort,            "ANTU LSS PRO Short", "ANTU LSS PRO — SHORT Signal on {{ticker}} ({{interval}})")
+alertcondition(newLong or newShort, "ANTU LSS PRO Any",   "ANTU LSS PRO — Signal Alert on {{ticker}} ({{interval}})")</pre>
+      </div>
+    </section>
+
+    <!-- INDIVIDUAL FILE DOWNLOADS GRID -->
+    <section class="container files-grid-section">
+      <div class="section-header text-center" style="margin-bottom: 2rem;">
+        <span class="section-tag">INDIVIDUAL DOWNLOADS</span>
+        <h2 class="section-title">Download Files Individually</h2>
+        <p class="section-subtitle">
+          If you prefer downloading files one-by-one or viewing PDFs directly in your browser:
+        </p>
+      </div>
+
+      <div class="files-grid">
+        
+        <!-- File 1: Pine Script -->
+        <div class="file-download-card">
+          <div class="file-card-top">
+            <div class="file-icon">💾</div>
+            <h3 class="file-title">ANTU_LSS_PRO.pine</h3>
+            <p class="file-desc">Official unencrypted Pine Script v6 source code for TradingView.</p>
+          </div>
+          <a href="downloads/ANTU_LSS_PRO.pine" download="ANTU_LSS_PRO.pine" class="file-action-btn">
+            <span>Download .pine File &darr;</span>
+          </a>
+        </div>
+
+        <!-- File 2: User Guide -->
+        <div class="file-download-card">
+          <div class="file-card-top">
+            <div class="file-icon">📖</div>
+            <h3 class="file-title">User Guide (PDF)</h3>
+            <p class="file-desc">10-Page master technical manual covering all 23 institutional concepts.</p>
+          </div>
+          <a href="downloads/ANTU_LSS_PRO_User_Guide.pdf" target="_blank" class="file-action-btn">
+            <span>View / Download PDF &darr;</span>
+          </a>
+        </div>
+
+        <!-- File 3: Installation Guide -->
+        <div class="file-download-card">
+          <div class="file-card-top">
+            <div class="file-icon">🛠️</div>
+            <h3 class="file-title">Installation Guide (PDF)</h3>
+            <p class="file-desc">4-Page step-by-step TradingView Pine Editor installation walkthrough.</p>
+          </div>
+          <a href="downloads/ANTU_LSS_PRO_Installation_Guide.pdf" target="_blank" class="file-action-btn">
+            <span>View / Download PDF &darr;</span>
+          </a>
+        </div>
+
+        <!-- File 4: Quick Start Guide -->
+        <div class="file-download-card">
+          <div class="file-card-top">
+            <div class="file-icon">⚡</div>
+            <h3 class="file-title">Quick Start Guide (PDF)</h3>
+            <p class="file-desc">3-Page 2-minute rapid deployment rules & execution checklist.</p>
+          </div>
+          <a href="downloads/ANTU_LSS_PRO_Quick_Start_Guide.pdf" target="_blank" class="file-action-btn">
+            <span>View / Download PDF &darr;</span>
+          </a>
+        </div>
+
+        <!-- File 5: Alert Setup Guide -->
+        <div class="file-download-card">
+          <div class="file-card-top">
+            <div class="file-icon">🔔</div>
+            <h3 class="file-title">Alert Setup Guide (PDF)</h3>
+            <p class="file-desc">3-Page guide to configuring popups, mobile alerts, and JSON webhooks.</p>
+          </div>
+          <a href="downloads/ANTU_LSS_PRO_Alert_Setup_Guide.pdf" target="_blank" class="file-action-btn">
+            <span>View / Download PDF &darr;</span>
+          </a>
+        </div>
+
+        <!-- File 6: Master Zip -->
+        <div class="file-download-card" style="border-color: rgba(16, 185, 129, 0.4);">
+          <div class="file-card-top">
+            <div class="file-icon">📦</div>
+            <h3 class="file-title">All-in-One (.ZIP)</h3>
+            <p class="file-desc">Entire bundle including all guides, Pine Script code, and legal license.</p>
+          </div>
+          <a href="downloads/ANTU_LSS_PRO_PACKAGE.zip" download="ANTU_LSS_PRO_PACKAGE.zip" class="file-action-btn" style="background: var(--accent-green); color: #060911;">
+            <span>Download .ZIP Archive &darr;</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4-STEP ONBOARDING WALKTHROUGH -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="workflow-section" style="padding: 0; background: none;">
+        <div class="section-header text-center" style="margin-bottom: 2rem;">
+          <span class="section-tag">QUICK ONBOARDING</span>
+          <h2 class="section-title">How to Install in TradingView in 2 Minutes</h2>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="workflow-step-card">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Copy the Code</h3>
+            <p class="step-desc">Click the green <strong>"Copy Pine Script Code"</strong> button above, or download <code>ANTU_LSS_PRO.pine</code>.</p>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Open Pine Editor</h3>
+            <p class="step-desc">Open any chart on TradingView.com and click the <strong>"Pine Editor"</strong> tab at the bottom toolbar.</p>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Paste & Save</h3>
+            <p class="step-desc">Delete any default template text, paste your code, click <strong>Save</strong> (name it "ANTU LSS PRO"), and click <strong>Add to chart</strong>.</p>
+          </div>
+
+          <div class="workflow-step-card">
+            <div class="step-num">04</div>
+            <h3 class="step-title">Configure Alerts</h3>
+            <p class="step-desc">Click the Alert clock icon, select ANTU LSS PRO, choose <strong>"Once Per Bar Close"</strong>, and click Create.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT & LICENSE NOTICE -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div style="background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border-subtle); border-radius: 0.85rem; padding: 2rem; text-align: center;">
+        <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: #ffffff;">Need Assistance or Have Questions?</h3>
+        <p style="font-size: 0.92rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 1.25rem;">
+          Consult the included <strong>Installation Guide (PDF)</strong> for troubleshooting common chart settings. If you need file assistance, contact support at <strong>amolparit1@gmail.com</strong>.
+        </p>
+        <p style="font-size: 0.78rem; color: var(--text-muted);">
+          LICENSE NOTICE: Your purchase grants a single-user personal license for your personal TradingView charts. Redistributing, uploading publicly to GitHub / TradingView library, or reselling this code is strictly prohibited.
+        </p>
+      </div>
+    </section>
+    </div><!-- End #verified-portal -->
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">ANTU LSS <span class="badge-pro">PRO</span></div>
+        <p class="footer-tagline">Institutional Liquidity Sweep & Fair Value Gap Trading System for TradingView.</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Homepage</a>
+        <a href="index.html#pricing">Pricing (₹999)</a>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 ANTU LSS PRO. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ==========================================================================
+       PAYMENT ACCESS CONTROL & VERIFICATION GUARD
+       ========================================================================== */
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const isPaidParam = urlParams.get('status') === 'paid' || 
+                          urlParams.get('payment_status') === 'paid' || 
+                          urlParams.get('paid') === 'true' ||
+                          urlParams.has('razorpay_payment_id') ||
+                          urlParams.has('payment_id');
+
+      const incomingPayId = urlParams.get('payment_id') || 
+                            urlParams.get('razorpay_payment_id') || 
+                            urlParams.get('id');
+
+      const isSessionUnlocked = sessionStorage.getItem('antu_lss_access_unlocked') === 'true';
+
+      const lockedGate = document.getElementById('locked-gate');
+      const verifiedPortal = document.getElementById('verified-portal');
+      const refIdDisplay = document.getElementById('payment-ref-id');
+      const unlockInput = document.getElementById('unlock-pay-id');
+      const unlockBtn = document.getElementById('btn-unlock-portal');
+      const unlockError = document.getElementById('unlock-error');
+
+      function unlockDownloads(payId) {
+        sessionStorage.setItem('antu_lss_access_unlocked', 'true');
+        if (payId) {
+          sessionStorage.setItem('antu_lss_pay_id', payId);
+        }
+        if (lockedGate) lockedGate.style.display = 'none';
+        if (verifiedPortal) verifiedPortal.style.display = 'block';
+
+        const displayId = payId || sessionStorage.getItem('antu_lss_pay_id') || 'RZP-CONFIRMED-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        if (refIdDisplay) refIdDisplay.innerText = displayId;
+      }
+
+      // Check if user came with payment confirmation
+      if (isPaidParam || isSessionUnlocked) {
+        unlockDownloads(incomingPayId || sessionStorage.getItem('antu_lss_pay_id'));
+      } else {
+        // LOCK THE PAGE — Block access until payment is verified
+        if (lockedGate) lockedGate.style.display = 'block';
+        if (verifiedPortal) verifiedPortal.style.display = 'none';
+      }
+
+      // Manual Payment ID Verification
+      if (unlockBtn && unlockInput) {
+        unlockBtn.addEventListener('click', () => {
+          const val = unlockInput.value.trim();
+          if (val.length >= 4) {
+            unlockError.style.display = 'none';
+            unlockBtn.innerHTML = '<span>Verifying...</span>';
+            setTimeout(() => {
+              unlockDownloads(val);
+            }, 600);
+          } else {
+            unlockError.innerText = 'Kripya apna valid Razorpay Payment ID ya Transaction ID enter karein.';
+            unlockError.style.display = 'block';
+          }
+        });
+
+        unlockInput.addEventListener('keypress', (e) => {
+          if (e.key === 'Enter') unlockBtn.click();
+        });
+      }
+    });
+
+    // Copy Pine Script code to clipboard
+    const copyBtn = document.getElementById('btn-copy-code');
+    const codeBlock = document.getElementById('pine-code-block');
+    const feedbackMsg = document.getElementById('copy-feedback');
+
+    if (copyBtn && codeBlock) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(codeBlock.innerText);
+          copyBtn.innerHTML = `<span>✓ Copied!</span>`;
+          if (feedbackMsg) feedbackMsg.classList.add('show');
+          setTimeout(() => {
+            copyBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg><span>Copy Pine Script Code</span>`;
+          }, 3500);
+        } catch (err) {
+          console.error("Clipboard copy failed: ", err);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
